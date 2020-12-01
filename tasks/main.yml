@@ -3,7 +3,6 @@
   git:
     repo: '{{ osx_terminal_themes_repo }}'
     dest: '{{ osx_terminal_themes_directory }}'
-    version:
 - name: List themes
   shell: defaults read com.apple.terminal "Window Settings"
   register: osx_terminal_themes_window_settings
