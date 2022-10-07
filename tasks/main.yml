@@ -9,7 +9,7 @@
   changed_when: false
   check_mode: no
 - name: Install Desired theme
-  shell: 'open {{ osx_terminal_themes_directory }}/schemes/{{ osx_terminal_themes_theme }}.terminal'
+  shell: 'open {{ osx_terminal_themes_directory }}/themes/{{ osx_terminal_themes_theme }}.terminal'
   when: '"name = " ~ osx_terminal_themes_theme not in osx_terminal_themes_window_settings.stdout'
 - name: Set default terminal theme
   osx_defaults:
