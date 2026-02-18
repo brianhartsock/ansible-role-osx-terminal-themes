@@ -8,8 +8,11 @@
   register: osx_terminal_themes_window_settings
   changed_when: false
   check_mode: false
-- name: Install Desired theme
-  ansible.builtin.command: 'open {{ osx_terminal_themes_directory }}/themes/{{ osx_terminal_themes_theme }}.terminal'
+- name: Install desired theme
+  ansible.builtin.command:
+    argv:
+      - open
+      - '{{ osx_terminal_themes_directory }}/themes/{{ osx_terminal_themes_theme }}.terminal'
   changed_when: true
   when: '"name = " ~ osx_terminal_themes_theme not in osx_terminal_themes_window_settings.stdout'
 - name: Set default terminal theme

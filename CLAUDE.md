@@ -8,11 +8,11 @@ Ansible Galaxy role (`brianhartsock.osx_terminal_themes`) that downloads and con
 
 ## Architecture
 
-Standard Ansible role layout with a single task file (`tasks/main.yml`) that:
-1. Clones the themes git repo to a local directory
-2. Checks if the desired theme is already installed via `defaults read`
-3. Opens the `.terminal` theme file to install it (if missing)
-4. Sets the theme as the default via `osx_defaults`
+Standard Ansible role layout with a single task file (`tasks/main.yml`) that uses FQCNs:
+1. Clones the themes git repo to a local directory (`ansible.builtin.git`)
+2. Checks if the desired theme is already installed via `defaults read` (`ansible.builtin.command`)
+3. Opens the `.terminal` theme file to install it if missing (`ansible.builtin.command`)
+4. Sets the theme as the default via `community.general.osx_defaults`
 
 Role variables (defined in `defaults/main.yml`):
 - `osx_terminal_themes_theme` — theme name (default: `Afterglow`)
@@ -41,6 +41,12 @@ uv run ansible-lint
 uv run flake8
 ```
 
+## CI
+
+GitHub Actions workflows in `.github/workflows/`:
+- **ci.yml** — runs on pushes to `master` and all PRs. Lints with ansible-lint, yamllint, and flake8 via uv.
+- **release.yml** — publishes the role to Ansible Galaxy on GitHub release (uses `GALAXY_API_KEY` secret).
+
 ## Development Workflow
 
 Follow this workflow for all code changes.
@@ -61,7 +67,7 @@ Update README.md and CLAUDE.md to reflect any changes to variables, platforms, c
 
 ### 3. Verify
 
-Run linters (yamllint, ansible-lint, flake8), pre-commit hooks, and molecule tests. All checks must pass before proceeding. If the ansible plugin is installed, use the `verifier` agent.
+Run linters (yamllint, ansible-lint, flake8) and pre-commit hooks. All checks must pass before proceeding. If the ansible plugin is installed, use the `verifier` agent.
 
 ### 4. Code Review
 
