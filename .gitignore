@@ -1,5 +1,4 @@
 .ansible/
-.ansible-lint
 .claude/settings.local.json
 .venv/
 *.retry
