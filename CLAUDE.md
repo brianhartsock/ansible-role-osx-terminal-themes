@@ -26,12 +26,6 @@ Dependencies are managed with [uv](https://docs.astral.sh/uv/). Install dev tool
 uv sync
 ```
 
-## Testing
-
-```bash
-uv run ansible-playbook tests/test.yml -i tests/inventory --connection=local
-```
-
 ## Linting
 
 Pre-commit hooks are configured (`.pre-commit-config.yaml`) for yamllint, ansible-lint, and flake8.
@@ -46,3 +40,33 @@ uv run yamllint .
 uv run ansible-lint
 uv run flake8
 ```
+
+## Development Workflow
+
+Follow this workflow for all code changes.
+
+```
+Code → Document → Verify → Code Review
+  ^                              |
+  └──── fix issues ──────────────┘
+```
+
+### 1. Code
+
+Make the implementation changes. Use FQCNs, name all tasks, and follow the patterns in existing task files.
+
+### 2. Document
+
+Update README.md and CLAUDE.md to reflect any changes to variables, platforms, commands, or architecture. If the ansible plugin is installed, use the `documentator` agent.
+
+### 3. Verify
+
+Run linters (yamllint, ansible-lint, flake8), pre-commit hooks, and molecule tests. All checks must pass before proceeding. If the ansible plugin is installed, use the `verifier` agent.
+
+### 4. Code Review
+
+Review the changes for Ansible best practices, idempotency, security, cross-platform correctness, and test coverage. If the ansible plugin is installed, use the `code-reviewer` agent.
+
+### 5. Iterate
+
+If verification or code review flags issues, fix them and repeat from step 2. Continue until all checks pass and the review is clean.
