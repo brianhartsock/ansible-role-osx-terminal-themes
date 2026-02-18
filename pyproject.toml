@@ -1,0 +1,11 @@
+[project]
+name = "ansible-role-osx-terminal-themes"
+version = "0.0.0"
+requires-python = ">=3.14"
+
+[dependency-groups]
+dev = [
+  "yamllint",
+  "ansible-lint",
+  "flake8",
+]
