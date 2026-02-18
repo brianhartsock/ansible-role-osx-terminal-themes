@@ -1,4 +1,5 @@
 galaxy_info:
+  namespace: brianhartsock
   role_name: osx_terminal_themes
   author: Brian Hartsock
   description: Download and configure OSX terminal themes from https://github.com/lysyi3m/macos-terminal-themes.

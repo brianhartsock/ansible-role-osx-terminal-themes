@@ -1,5 +1,4 @@
 ---
 skip_list:
   - 'latest[git]'
-  - 'role-name'
   - 'yaml'
