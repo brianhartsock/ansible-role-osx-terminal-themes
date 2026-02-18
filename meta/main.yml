@@ -1,16 +1,17 @@
 galaxy_info:
+  namespace: brianhartsock
   role_name: osx_terminal_themes
   author: Brian Hartsock
   description: Download and configure OSX terminal themes from https://github.com/lysyi3m/macos-terminal-themes.
 
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
 
   platforms:
     - name: MacOSX
       versions:
-      - all
+        - all
 
   galaxy_tags:
     - osx
