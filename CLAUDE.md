@@ -18,6 +18,7 @@ Role variables (defined in `defaults/main.yml`):
 - `osx_terminal_themes_theme` — theme name (default: `Afterglow`)
 - `osx_terminal_themes_directory` — clone destination (default: `~/.osx-terminal-themes`)
 - `osx_terminal_themes_repo` — themes git repo URL
+- `osx_terminal_themes_version` — git revision to checkout (commit, tag, or branch)
 
 ## Setup
 

@@ -21,6 +21,7 @@ Role Variables
 |`osx_terminal_themes_theme`|`Afterglow`|Theme to configure terminal to use.|
 |`osx_terminal_themes_directory`|`~/.osx-terminal-themes`|Directory to clone themes into.|
 |`osx_terminal_themes_repo`|`https://github.com/lysyi3m/macos-terminal-themes`|Git repository of themes.|
+|`osx_terminal_themes_version`|`3b4e967e77777a2447340c0dfe59933ad45f8c57`|Git revision (commit, tag, or branch) to checkout.|
 
 Dependencies
 ------------
