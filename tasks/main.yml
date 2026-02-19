@@ -3,6 +3,7 @@
   ansible.builtin.git:
     repo: '{{ osx_terminal_themes_repo }}'
     dest: '{{ osx_terminal_themes_directory }}'
+    version: '{{ osx_terminal_themes_version }}'
 - name: List themes
   ansible.builtin.command: defaults read com.apple.terminal "Window Settings"
   register: osx_terminal_themes_window_settings
